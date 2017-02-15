@@ -1,0 +1,26 @@
+{
+  "name": "inspiringquote",
+  "version": "1.0.0",
+  "description": "One random inspiring quote.",
+  "main": "./app/index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/Onra/inspiringquote.git"
+  },
+  "keywords": [
+    "quote",
+    "inspiring",
+    "react",
+    "npm",
+    "webpack"
+  ],
+  "author": "Arnaud Christ",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Onra/inspiringquote/issues"
+  },
+  "homepage": "https://github.com/Onra/inspiringquote#readme"
+}

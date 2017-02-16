@@ -10,6 +10,17 @@ html {
             justify-content: center;
             height: 100%;
 
+            h1 {
+                font-size: 20px;
+                text-align: center;
+                text-transform: uppercase;
+                letter-spacing: 0.16em;
+                font-family: Roboto Condensed,sans-serif;
+                color: #b9b8b3;
+                font-weight: 200;
+
+            }
+
             .quote {
                 font-family: 'Courgette', cursive;
                 color: #31302f;

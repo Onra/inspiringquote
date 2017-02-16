@@ -12,7 +12,10 @@ class Home extends Component {
     render() {
         const quote = this._getRandomQuote();
         return (
-            <Quote quote={quote}/>
+            <section>
+                <h1>Inspiring Random Quote</h1>
+                <Quote quote={quote}/>
+            </section>
         )
     }
 }

@@ -10,6 +10,18 @@ html {
             justify-content: center;
             height: 100%;
 
+            section {
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+
+                img.refresh {
+                    margin-top: 20px;
+                    width: 3rem;
+                }
+            }
+
             h1 {
                 font-size: 20px;
                 text-align: center;

@@ -7,17 +7,27 @@ import Refresh from './Refresh';
 import quotes from '../data/quotes.json';
 
 class Home extends Component {
-    _getRandomQuote() {
-        return quotes[Math.floor(Math.random()*quotes.length)];
+    constructor() {
+        super();
+
+        this._generateRandomQuote = this._generateRandomQuote.bind(this);
+    }
+    
+    componentWillMount() {
+        console.log("componentDidMount");
+        this._generateRandomQuote();
+    }
+    
+    _generateRandomQuote() {
+        this.setState({quote: quotes[Math.floor(Math.random()*quotes.length)]});
     }
     
     render() {
-        const quote = this._getRandomQuote();
         return (
             <section>
                 <h1>Inspiring Random Quote</h1>
-                <Quote quote={quote}/>
-                <Refresh />
+                <Quote quote={this.state.quote}/>
+                <Refresh onClick={this._generateRandomQuote}/>
             </section>
         )
     }

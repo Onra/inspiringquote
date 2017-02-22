@@ -9479,13 +9479,17 @@ var Home = function (_Component) {
     function Home() {
         _classCallCheck(this, Home);
 
-        return _possibleConstructorReturn(this, (Home.__proto__ || Object.getPrototypeOf(Home)).apply(this, arguments));
+        var _this = _possibleConstructorReturn(this, (Home.__proto__ || Object.getPrototypeOf(Home)).call(this));
+
+        _this._generateRandomQuote = _this._generateRandomQuote.bind(_this);
+        return _this;
     }
 
     _createClass(Home, [{
-        key: 'componentDidMount',
-        value: function componentDidMount() {
-            this._getRandomQuote();
+        key: 'componentWillMount',
+        value: function componentWillMount() {
+            console.log("componentDidMount");
+            this._generateRandomQuote();
         }
     }, {
         key: '_generateRandomQuote',
@@ -9504,7 +9508,7 @@ var Home = function (_Component) {
                     'Inspiring Random Quote'
                 ),
                 _react2.default.createElement(_Quote2.default, { quote: this.state.quote }),
-                _react2.default.createElement(_Refresh2.default, { onClick: this._generateRandomQuote() })
+                _react2.default.createElement(_Refresh2.default, { onClick: this._generateRandomQuote })
             );
         }
     }]);
@@ -9700,7 +9704,7 @@ var Refresh = function (_Component) {
                 _react2.default.createElement('img', { src: __webpack_require__(184),
                     className: 'refresh',
                     alt: 'Refresh Icon',
-                    onClick: this.props.onClick() })
+                    onClick: this.props.onClick })
             );
         }
     }]);

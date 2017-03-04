@@ -9597,6 +9597,14 @@ module.exports = [
 	{
 		"text": "I never lose. I either win or learn.",
 		"author": "Nelson Mandela"
+	},
+	{
+		"text": "Desire is the starting point of all achievement, not a hope, not a wish, but a keen pulsating desire which transcends everything.",
+		"author": "Napoleon Hill"
+	},
+	{
+		"text": "The best time to plant a tree was 20 years ago. The second best time is now.",
+		"author": "Chinese Proverb"
 	}
 ];
 
@@ -9692,19 +9700,32 @@ var Refresh = function (_Component) {
     function Refresh() {
         _classCallCheck(this, Refresh);
 
-        return _possibleConstructorReturn(this, (Refresh.__proto__ || Object.getPrototypeOf(Refresh)).apply(this, arguments));
+        var _this = _possibleConstructorReturn(this, (Refresh.__proto__ || Object.getPrototypeOf(Refresh)).call(this));
+
+        _this._handleRefreshClick = _this._handleRefreshClick.bind(_this);
+        return _this;
     }
 
     _createClass(Refresh, [{
-        key: 'render',
+        key: "_handleRefreshClick",
+        value: function _handleRefreshClick(event) {
+            var refreshButton = event.target;
+            refreshButton.className = "refresh clicked";
+            window.setTimeout(function () {
+                refreshButton.className = "refresh";
+            }, 1000);
+            this.props.onClick();
+        }
+    }, {
+        key: "render",
         value: function render() {
             return _react2.default.createElement(
-                'figure',
+                "figure",
                 null,
-                _react2.default.createElement('img', { src: __webpack_require__(184),
-                    className: 'refresh',
-                    alt: 'Refresh Icon',
-                    onClick: this.props.onClick })
+                _react2.default.createElement("img", { src: __webpack_require__(184),
+                    className: "refresh",
+                    alt: "Refresh Icon",
+                    onClick: this._handleRefreshClick })
             );
         }
     }]);
@@ -22004,7 +22025,7 @@ exports = module.exports = __webpack_require__(86)();
 
 
 // module
-exports.push([module.i, "html {\n  height: 100%;\n  background-color: #fefef6; }\n  html body {\n    height: 100%; }\n    html body #root {\n      display: flex;\n      align-content: center;\n      justify-content: center;\n      height: 100%; }\n      html body #root section {\n        display: flex;\n        flex-direction: column;\n        justify-content: center;\n        align-items: center; }\n        html body #root section img.refresh {\n          cursor: pointer;\n          margin-top: 20px;\n          width: 3rem; }\n      html body #root h1 {\n        font-size: 20px;\n        text-align: center;\n        text-transform: uppercase;\n        letter-spacing: 0.16em;\n        font-family: Roboto Condensed,sans-serif;\n        color: #b9b8b3;\n        font-weight: 200; }\n      html body #root .quote {\n        font-family: 'Courgette', cursive;\n        color: #31302f;\n        display: flex;\n        justify-content: center;\n        align-content: center;\n        flex-flow: column;\n        font-size: 30px;\n        text-align: center; }\n        html body #root .quote .author {\n          font-size: 14px;\n          color: #b9b8b3;\n          font-family: Roboto Condensed,sans-serif;\n          text-align: center; }\n", ""]);
+exports.push([module.i, "html {\n  height: 100%;\n  background-color: #fefef6; }\n  html body {\n    height: 100%; }\n    html body #root {\n      display: flex;\n      align-content: center;\n      justify-content: center;\n      height: 100%; }\n      html body #root section {\n        display: flex;\n        flex-direction: column;\n        justify-content: center;\n        align-items: center; }\n        html body #root section img.refresh {\n          cursor: pointer;\n          margin-top: 20px;\n          width: 3rem;\n          transition: transform 1s; }\n        html body #root section img.refresh.clicked {\n          transform: rotate(-360deg); }\n      html body #root h1 {\n        font-size: 20px;\n        text-align: center;\n        text-transform: uppercase;\n        letter-spacing: 0.16em;\n        font-family: Roboto Condensed,sans-serif;\n        color: #b9b8b3;\n        font-weight: 200; }\n      html body #root .quote {\n        font-family: 'Courgette', cursive;\n        color: #31302f;\n        display: flex;\n        justify-content: center;\n        align-content: center;\n        flex-flow: column;\n        font-size: 30px;\n        text-align: center; }\n        html body #root .quote .author {\n          font-size: 14px;\n          color: #b9b8b3;\n          font-family: Roboto Condensed,sans-serif;\n          text-align: center; }\n", ""]);
 
 // exports
 
